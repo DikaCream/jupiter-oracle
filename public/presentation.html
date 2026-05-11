@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jupiter Oracle - Pitch Deck</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;600;800&display=swap');
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #040609;
+      color: #f8fafc;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+
+    .slider {
+      height: 100vh;
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+      scroll-behavior: smooth;
+    }
+
+    .slide {
+      height: 100vh;
+      width: 100vw;
+      scroll-snap-align: start;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      padding: 5%;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .slide-inner {
+      max-width: 1000px;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Typography */
+    .mono { font-family: 'Space Mono', monospace; }
+    
+    .tagline {
+      font-size: 14px;
+      color: #4ade80;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 4rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 30px;
+      color: #e2e8f0;
+    }
+
+    p.lead {
+      font-size: 1.5rem;
+      color: #94a3b8;
+      line-height: 1.5;
+      max-width: 800px;
+      margin-bottom: 40px;
+    }
+
+    /* Components */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    .box {
+      background: rgba(15, 23, 42, 0.4);
+      border: 1px solid #1e293b;
+      padding: 30px;
+      border-radius: 8px;
+    }
+
+    .box-title {
+      font-family: 'Space Mono', monospace;
+      color: #22d3ee;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .box p {
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      line-height: 1.6;
+    }
+
+    /* Specific Slides */
+    .slide-1 h1 span { color: #4ade80; }
+    
+    .arch-diagram {
+      font-family: 'Space Mono', monospace;
+      font-size: 14px;
+      color: #94a3b8;
+      background: #020406;
+      border: 1px solid #1e293b;
+      padding: 30px;
+      line-height: 2;
+      white-space: pre;
+      overflow-x: auto;
+    }
+
+    .highlight-green { color: #4ade80; }
+    .highlight-cyan { color: #22d3ee; }
+
+    /* Navigation dots */
+    .nav-dots {
+      position: fixed;
+      right: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      z-index: 100;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #334155;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .dot:hover { background: #4ade80; }
+
+    /* Background glow */
+    .glow {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(74,222,128,0.05) 0%, rgba(0,0,0,0) 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="nav-dots">
+    <a href="#slide-1" class="dot"></a>
+    <a href="#slide-2" class="dot"></a>
+    <a href="#slide-3" class="dot"></a>
+    <a href="#slide-4" class="dot"></a>
+    <a href="#slide-5" class="dot"></a>
+  </div>
+
+  <div class="slider">
+    
+    <!-- SLIDE 1 -->
+    <div class="slide slide-1" id="slide-1">
+      <div class="glow"></div>
+      <div class="slide-inner">
+        <p class="tagline mono">Superteam Bounty 2026</p>
+        <h1>Jupiter <span>Oracle</span></h1>
+        <p class="lead">A real-time trading intelligence dashboard that bridges on-chain prediction markets with automated swap execution.</p>
+        <div class="mono" style="color: #64748b; font-size: 14px;">Scroll down ↓</div>
+      </div>
+    </div>
+
+    <!-- SLIDE 2 -->
+    <div class="slide" id="slide-2">
+      <div class="slide-inner">
+        <h2>The Core Thesis</h2>
+        <p class="lead">What if prediction markets are the ultimate trading oracle?</p>
+        
+        <div class="grid-2">
+          <div class="box">
+            <div class="box-title">01 // The Signal</div>
+            <p>We use Jupiter's Prediction API (bridging Polymarket/Kalshi liquidity) to read live odds. If the market says there is a 75% chance BTC hits $150k, that is our oracle signal.</p>
+          </div>
+          <div class="box">
+            <div class="box-title" style="color: #a78bfa;">02 // The Action</div>
+            <p>Instead of just plotting charts, we arm a Sentinel. When the odds hit a user-defined threshold, it automatically builds and triggers a real on-chain swap via Jupiter Swap API.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3 -->
+    <div class="slide" id="slide-3">
+      <div class="slide-inner">
+        <h2>Architecture</h2>
+        <p class="lead">100% Client-Side. 0 Middleware. 5 Jupiter APIs.</p>
+        
+        <div class="arch-diagram">
+[ Browser / React App ]
+  │
+  ├── 1. <span class="highlight-cyan">GET /prediction/v1/events</span> (Poll every 10s)
+  │      ↳ Populates live markets table & triggers Sentinel check
+  │
+  ├── 2. <span class="highlight-cyan">GET /prediction/v1/orderbook</span> (Real-time depth)
+  │
+  ├── 3. <span class="highlight-cyan">GET /price/v3</span> (Live prices for SOL/USDC)
+  │
+  └── 4. Sentinel Threshold Reached? 
+         ↳ YES: <span class="highlight-green">GET /swap/v2/order</span>
+         ↳ Returns Base64 Tx → Phantom Wallet → <span class="highlight-green">Solana Mainnet</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 4 -->
+    <div class="slide" id="slide-4">
+      <div class="slide-inner">
+        <h2>The Sentinel Engine</h2>
+        <p class="lead">Executing swaps based on probability thresholds.</p>
+        
+        <div class="grid-2">
+          <div class="box" style="border-color: #4ade80;">
+            <div class="box-title" style="color: #4ade80;">Automated Execution</div>
+            <p>The user sets a YES% threshold (e.g., 80%). The app polls Jupiter APIs every 10s. The moment the live odds cross 80%, the frontend requests an optimally routed swap transaction.</p>
+          </div>
+          <div class="box">
+            <div class="box-title">Native Integration</div>
+            <p>Using <code>window.solana</code> to inject the unsigned transaction directly into Phantom. No complex backend or RPC node required. Pure REST API to on-chain execution.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 5 -->
+    <div class="slide" id="slide-5">
+      <div class="slide-inner">
+        <h2>Developer Experience (DX)</h2>
+        <p class="lead">Beyond building, we documented the entire journey.</p>
+        
+        <div class="box">
+          <div class="box-title">DX-REPORT.md</div>
+          <ul style="color: #cbd5e1; font-size: 1.1rem; line-height: 2; padding-left: 20px;">
+            <li>Mapped response structural changes between Price API v2 vs v3.</li>
+            <li>Documented local CORS friction and provided Vite/Vercel proxy rewrites.</li>
+            <li>Highlighted the bridge mechanics of Jupiter's prediction endpoints (POLY- prefixed events).</li>
+            <li>Proved the viability of browser-only programmatic execution via Swap V2.</li>
+          </ul>
+        </div>
+        
+        <div style="margin-top: 40px;" class="mono">
+          <a href="/" style="color: #4ade80; text-decoration: none; padding: 10px 20px; border: 1px solid #4ade80;">← BACK TO DASHBOARD</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // Simple intersection observer to update dots
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          dots.forEach(dot => {
+            if (dot.getAttribute('href') === `#${id}`) {
+              dot.style.background = '#4ade80';
+            } else {
+              dot.style.background = '#334155';
+            }
+          });
+        }
+      });
+    }, { threshold: 0.5 });
+
+    slides.forEach(slide => observer.observe(slide));
+  </script>
+</body>
+</html>
