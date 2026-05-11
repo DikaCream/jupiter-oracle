@@ -86,9 +86,9 @@ export default function App() {
     if (!online) return
     setEvtLoading(true)
     try {
-      let url = 'https://api.jup.ag/prediction/v1/events'
+      let url = '/jup/prediction/v1/events'
       if (searchQuery.trim().length > 0) {
-        url = `https://api.jup.ag/prediction/v1/events/search?query=${encodeURIComponent(searchQuery)}`
+        url = `/jup/prediction/v1/events/search?query=${encodeURIComponent(searchQuery)}`
       }
       
       const res  = await jupFetch(url)
@@ -111,7 +111,7 @@ export default function App() {
   const fetchOrderbook = useCallback(async (marketId: string) => {
     if (!online) return
     try {
-      const res = await jupFetch(`https://api.jup.ag/prediction/v1/orderbook/${marketId}`)
+      const res = await jupFetch(`/jup/prediction/v1/orderbook/${marketId}`)
       const data = await res.json()
       setOrderbook(data)
     } catch (e) {
@@ -125,7 +125,7 @@ export default function App() {
     setPriceErr('')
     try {
       const ids = TOKENS.map(t => t.mint).join(',')
-      const res = await jupFetch(`https://api.jup.ag/price/v3?ids=${ids}`)
+      const res = await jupFetch(`/jup/price/v3?ids=${ids}`)
       if (!res.ok) throw new Error(`HTTP ${res.status}`)
       const json: PriceMap = await res.json()
       setPrices(json)
@@ -160,7 +160,7 @@ export default function App() {
     setSentinelLog(prev => [{ ts: new Date().toLocaleTimeString(), msg: 'Requesting Swap V2 order...', alert: false }, ...prev])
     try {
       const res = await fetch(
-        `https://api.jup.ag/swap/v2/order?inputMint=${USDC_MINT}&outputMint=${SOL_MINT}&amount=1000000&taker=${walletAddress}`,
+        `/jup/swap/v2/order?inputMint=${USDC_MINT}&outputMint=${SOL_MINT}&amount=1000000&taker=${walletAddress}`,
         { headers: { 'x-api-key': API_KEY } }
       )
       const data = await res.json()
