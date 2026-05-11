@@ -6,7 +6,7 @@ Built as part of the **Superteam Jupiter Developer Platform Bounty 2026**.
 
 **Live:** https://jupiter-oracle-dashboard.vercel.app
 
-**Repo:** https://github.com/DikaCream/jupiter-oracle-dashboard
+**Repo:** https://github.com/DikaCream/jupiter-oracle
 
 ---
 
@@ -131,8 +131,8 @@ Any wallet that exposes a `window.solana`-compatible API should work. Backpack d
 ## Running Locally
 
 ```bash
-git clone https://github.com/DikaCream/jupiter-oracle-dashboard.git
-cd jupiter-oracle-dashboard
+git clone https://github.com/DikaCream/jupiter-oracle.git
+cd jupiter-oracle
 
 npm install --legacy-peer-deps
 ```
@@ -189,7 +189,7 @@ DX-REPORT.md    full developer experience report
 
 The full DX report covering API friction points, endpoint discoveries, CORS findings, response format differences between API versions, and architectural decisions is in `DX-REPORT.md`.
 
-Read it at: https://github.com/DikaCream/jupiter-oracle-dashboard/blob/main/DX-REPORT.md
+Read it at: https://github.com/DikaCream/jupiter-oracle/blob/main/DX-REPORT.md
 
 ---
 
