@@ -1,0 +1,21 @@
+{
+  "rewrites": [
+    {
+      "source": "/jup/:path*",
+      "destination": "https://api.jup.ag/:path*"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/jup/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Access-Control-Allow-Methods", "value": "GET,POST,OPTIONS" },
+        { "key": "Access-Control-Allow-Headers", "value": "x-api-key,Content-Type" }
+      ]
+    }
+  ],
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": "vite"
+}
