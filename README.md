@@ -4,7 +4,7 @@ Real-time trading intelligence dashboard built on Jupiter's developer APIs. Trac
 
 Built as part of the **Superteam Jupiter Developer Platform Bounty 2026**.
 
-**Live:** https://jupiter-oracle-dashboard.vercel.app
+**Live:** https://jupiter-oracle.vercel.app/
 
 **Repo:** https://github.com/DikaCream/jupiter-oracle
 
